@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Controllers = require('../Controllers/controllers');
+const Controllers = require('../Controllers/Controllers');
 const { upload } = require('../Middleware/uploadMiddleware');
 
 // User signup - expects single file in field 'image'
