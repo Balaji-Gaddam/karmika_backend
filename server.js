@@ -12,6 +12,7 @@ const path = require('path');
 const authRoutes = require('./Routes/authRoutes');
 const userRoutes = require('./Routes/userRoutes');
 const karmikaRoutes = require('./Routes/karmikaRoutes');
+const API_URL = require("../karmika_frontend/src/config")
 
 const app = express();
 
@@ -26,7 +27,7 @@ app.use(morgan('dev'));
 
 app.use(
   cors({
-    origin: "http://localhost:3000", // your frontend URL
+    origin: API_URL, // your frontend URL
     credentials: true,              // allow cookies/auth headers
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
