@@ -1,22 +1,23 @@
-//Changes made by AI
+// Changes made by AI
 
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+
 const userSignupSchema = new Schema(
   {
-    Username: { type: String, trim: true },
+    Username: String,
     email: { type: String, required: true, unique: true, lowercase: true, trim: true },
     contact: String,
     password: String,
-    image: String
+    image: String,
   },
   { timestamps: true }
 );
 
 const karmikaSignupSchema = new Schema(
   {
-    name: { type: String, trim: true },
+    name: String,
     email: { type: String, required: true, unique: true, lowercase: true, trim: true },
     contact: String,
     profileImage: String,
@@ -24,10 +25,11 @@ const karmikaSignupSchema = new Schema(
     price: String,
     address: String,
     aadharImage: String,
-    password: String
+    password: String,
   },
   { timestamps: true }
 );
+
 
 const userSignupModel = mongoose.model("users", userSignupSchema);
 const karmikaSignupModel = mongoose.model("karmikas", karmikaSignupSchema);

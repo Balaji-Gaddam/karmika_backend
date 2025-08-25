@@ -26,9 +26,10 @@ const protect = async (req, res, next) => {
       return res.status(401).json({ status: 'fail', message: 'Invalid or expired token' });
     }
 
+    // Check both collections
     const existingUser = await userSignupModel.findById(decoded.id);
     const existingKarmika = await karmikaSignupModel.findById(decoded.id);
-    const currentUser = existingUser ? existingUser : existingKarmika;
+    const currentUser = existingUser || existingKarmika;
 
     if (!currentUser) {
       return res.status(404).json({ status: 'fail', message: 'User no longer exists' });
