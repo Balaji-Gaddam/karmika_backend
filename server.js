@@ -12,7 +12,7 @@ const path = require('path');
 const authRoutes = require('./Routes/authRoutes');
 const userRoutes = require('./Routes/userRoutes');
 const karmikaRoutes = require('./Routes/karmikaRoutes');
-const API_URL = require("../karmika_frontend/src/config")
+const API_URL = process.env.Frontend_URL || "http://localhost:3000"
 
 const app = express();
 
