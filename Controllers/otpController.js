@@ -2,7 +2,7 @@ const { userSignupModel, karmikaSignupModel } = require("../Models/Models");
 const { generateOtp,otpHtml} = require("../utils/otp");
 
 const OtpToken = require("../Models/OtpToken");
-const  sendEmail  = require("../utils/mailer");
+const { sendEmail } = require("../utils/mailer");
 
 
 const OTP_TTL_MINUTES = 10;
@@ -38,7 +38,7 @@ const sendOtp = async (req, res) => {
     return res.json({ status: "success", message: "OTP sent successfully" });
   } catch (err) {
     console.error("Send OTP error:", err);
-    res.status(500).json({ status: "error", message: "Failed to send OTP" , error:err.message});
+    res.status(500).json({ status: "error", message: "Failed to send OTP" });
   }
 };
 
