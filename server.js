@@ -27,7 +27,7 @@ app.use(morgan('dev'));
 
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://karmika-backend.onrender.com"
+  "https://karmika-frontend.vercel.app"
 ];
 
 app.use(cors({
